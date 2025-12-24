@@ -1,14 +1,31 @@
-// Importar servicio centralizado
 const wolService = require(app.vault.adapter.basePath + "/06 Templates/Scripts/services/wheelOfLife.js");
 const container = input.container;
 const style = getComputedStyle(document.body);
-
-// Datos
 const page = dv.current();
-const keys = wolService.getKeys();
-const dataValues = keys.map(k => page.wheelOfLife?.[k] || 0);
 
-// Configuración Gráfico
+let dataValues = [];
+const keys = wolService.getKeys();
+
+if (page.file.path.includes("02 Weekly")) {
+    dataValues = keys.map(k => page.wheelOfLife?.[k] || 0);
+} else {
+    let filterUnit = 'month';
+    if (page.file.path.includes("Quarterly")) filterUnit = 'quarter';
+    if (page.file.path.includes("Yearly")) filterUnit = 'year';
+
+    const weeks = dv.pages(`"${window.timeGarden.rootPath}02 Weekly"`)
+        .where(p => p.date && moment(p.date.toString()).isSame(moment(page.date.toString()), filterUnit));
+    
+    dataValues = keys.map(key => {
+        let sum = 0, count = 0;
+        weeks.forEach(w => {
+            const val = w.wheelOfLife?.[key];
+            if (typeof val === 'number') { sum += val; count++; }
+        });
+        return count > 0 ? (sum / count).toFixed(1) : 0;
+    });
+}
+
 const chartData = {
     type: 'polarArea',
     data: {
@@ -25,22 +42,13 @@ const chartData = {
         maintainAspectRatio: false,
         scales: {
             r: {
-                min: 0,
-                max: 10,
-                beginAtZero: true,
-                grid: {
-                    display: true,
-                    color: style.getPropertyValue('--background-modifier-border')
-                },
-                ticks: { display: false } // Ocultar números para limpieza
+                min: 0, max: 10,
+                ticks: { display: false },
+                grid: { display: true, color: style.getPropertyValue('--background-modifier-border') }
             }
         },
         plugins: {
-            legend: {
-                display: true,
-                position: 'bottom',
-                labels: { color: style.getPropertyValue('--text-muted') }
-            }
+            legend: { position: 'bottom', labels: { color: style.getPropertyValue('--text-muted') } }
         }
     }
 };

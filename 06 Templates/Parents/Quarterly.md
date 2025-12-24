@@ -18,6 +18,17 @@ journal: quarterly
 journal-date: <% moment(tp.file.title, 'YYYY-[Q]Q').startOf('quarter').format("YYYY-MM-DD") %>
 journal-start-date: <% moment(tp.file.title, 'YYYY-[Q]Q').startOf('quarter').format("YYYY-MM-DD") %>
 journal-end-date: <% moment(tp.file.title, 'YYYY-[Q]Q').endOf('quarter').format("YYYY-MM-DD") %>
+wheelOfLife:
+  career: 
+  careerSummary: ""
+  health: 
+  healthSummary: ""
+  growth: 
+  growthSummary: ""
+  recreation: 
+  recreationSummary: ""
+  social: 
+  socialSummary: ""
 <%"---"%>
 # ✧ *<% moment(tp.file.title, 'YYYY-[Q]Q').format('YYYY [Q]Q') %>*
 
@@ -29,8 +40,7 @@ tR += await tp.file.include("[[Quarterly MetaBindNavBar]]");
 tR += await tp.file.include("[[Quarterly MetaBindAlias]]");
 %>
 
-<%* 
-tR += await tp.file.include("[[Quarterly MetaBindSummary]]"); 
+<%* tR += await tp.file.include("[[Quarterly MetaBindSummary]]"); 
 %>
 
 <%*

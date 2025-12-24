@@ -1,35 +1,37 @@
 const wolService = require(app.vault.adapter.basePath + "/06 Templates/Scripts/services/wheelOfLife.js");
 const container = input.container;
 const style = getComputedStyle(document.body);
+const page = dv.current();
 
-// 1. Obtener notas semanales de este mes
-const currentFile = dv.current();
-const weeks = dv.pages(`"${window.timeGarden.rootPath}02 Weekly"`)
-    .where(p => p.date && moment(p.date.toString()).format('YYYY-MM') === moment(currentFile.date.toString()).format('YYYY-MM'))
-    .sort(p => p.file.name);
-
-// 2. Calcular promedios usando las claves del servicio
+let dataValues = [];
 const keys = wolService.getKeys();
-const averages = keys.map(key => {
-    let sum = 0;
-    let count = 0;
-    weeks.forEach(w => {
-        const val = w.wheelOfLife?.[key];
-        if (typeof val === 'number') {
-            sum += val;
-            count++;
-        }
-    });
-    return count > 0 ? (sum / count).toFixed(1) : 0;
-});
 
-// 3. Renderizar Gráfico Polar
+if (page.file.path.includes("02 Weekly")) {
+    dataValues = keys.map(k => page.wheelOfLife?.[k] || 0);
+} else {
+    let filterUnit = 'month';
+    if (page.file.path.includes("Quarterly")) filterUnit = 'quarter';
+    if (page.file.path.includes("Yearly")) filterUnit = 'year';
+
+    const weeks = dv.pages(`"${window.timeGarden.rootPath}02 Weekly"`)
+        .where(p => p.date && moment(p.date.toString()).isSame(moment(page.date.toString()), filterUnit));
+    
+    dataValues = keys.map(key => {
+        let sum = 0, count = 0;
+        weeks.forEach(w => {
+            const val = w.wheelOfLife?.[key];
+            if (typeof val === 'number') { sum += val; count++; }
+        });
+        return count > 0 ? (sum / count).toFixed(1) : 0;
+    });
+}
+
 const chartData = {
     type: 'polarArea',
     data: {
         labels: wolService.getLabels(),
         datasets: [{
-            data: averages,
+            data: dataValues,
             backgroundColor: wolService.getAllColors(),
             borderColor: wolService.getAllBorders(),
             borderWidth: 1
@@ -40,22 +42,13 @@ const chartData = {
         maintainAspectRatio: false,
         scales: {
             r: {
-                min: 0,
-                max: 10,
+                min: 0, max: 10,
                 ticks: { display: false },
-                grid: { color: style.getPropertyValue('--background-modifier-border') }
+                grid: { display: true, color: style.getPropertyValue('--background-modifier-border') }
             }
         },
         plugins: {
-            legend: {
-                position: 'bottom',
-                labels: { color: style.getPropertyValue('--text-muted') }
-            },
-            title: {
-                display: true,
-                text: 'Monthly Average',
-                color: style.getPropertyValue('--text-normal')
-            }
+            legend: { position: 'bottom', labels: { color: style.getPropertyValue('--text-muted') } }
         }
     }
 };

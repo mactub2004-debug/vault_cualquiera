@@ -15,6 +15,17 @@ YearSummary: ""
 yearlyWheelOfLifeCategoryChartType: line
 journal: yearly
 journal-date: <% moment(tp.file.title, 'YYYY').startOf('year').format("YYYY-MM-DD") %>
+wheelOfLife:
+  career: 
+  careerSummary: ""
+  health: 
+  healthSummary: ""
+  growth: 
+  growthSummary: ""
+  recreation: 
+  recreationSummary: ""
+  social: 
+  socialSummary: ""
 <%"---"%>
 # ✧ <% tp.file.title %>
 
