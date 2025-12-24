@@ -1,0 +1,82 @@
+<%"---"%>
+tags:
+  - "#type/weekly-note" 
+cssclasses:
+- image-borders
+- image-small
+- weekly
+- timegarden-weekly
+<%* tR += "- " + "week-" + moment(tp.file.title, 'YYYY-[W]WW').format('W').toLowerCase();%>
+<%* // --- BANNER CONFIG --- 
+tR += await tp.file.include("[[Weekly Banner Config]]"); %>
+date: <% moment(tp.file.title, 'YYYY-[W]ww').startOf('week').format("YYYY-MM-DD") %>
+journal: weekly
+journal-date: <% moment(tp.file.title, 'YYYY-[W]WW').format("YYYY-MM-DD") %>
+journal-start-date: <% moment(tp.file.title, 'YYYY-[W]WW').isoWeekday(1).format("YYYY-MM-DD") %>
+journal-end-date: <% moment(tp.file.title, 'YYYY-[W]WW').isoWeekday(7).format("YYYY-MM-DD") %>
+alias:
+WeekSummary: ""
+wheelOfLife:
+  career: 
+  careerSummary: ""
+  health: 
+  healthSummary: ""
+  growth: 
+  growthSummary: ""
+  recreation: 
+  recreationSummary: ""
+  social: 
+  socialSummary: ""
+<%"---"%>
+# ✧ <% tp.file.title %>
+[[<% fileDate = moment(tp.file.title, 'YYYY-[W]WW').format('YYYY-[W]WW') %>|]] 
+<%*
+// --- NAVBAR ---
+tR += await tp.file.include("[[Weekly MetaBindNavBar]]");
+%>
+
+<%*
+tR += await tp.file.include("[[Weekly MetaBindAlias]]");
+%>
+
+
+## Ratings ✮⋆˙
+---
+<%*
+// the weekly average
+tR += await tp.file.include("[[Weekly Rating Average]]");
+%>
+<%*
+// the weekly Rating Barchart Module
+tR += await tp.file.include("[[Weekly Rating BarChart]]");
+%>
+## Logs
+---
+<%*
+// weekly thought dashboard
+tR += await tp.file.include("[[Weekly Progress]]");
+%>
+
+<%*
+// weekly thought dashboard
+tR += await tp.file.include("[[Weekly Ideas]]");
+%>
+
+<%*
+// weekly thought dashboard
+tR += await tp.file.include("[[Weekly Highlights]]");
+%>
+
+## Wheel of Life
+---
+<%*
+// wheel of Life chart
+ tR += await tp.file.include("[[Weekly WheelOfLife]]")
+%>
+
+<%*
+// wheel of Life displays
+tR += await tp.file.include("[[weekly MetaBindWheelOfLifeDisplay]]")
+%>
+
+<%* app.workspace.activeLeaf.view.editor?.focus(); %>

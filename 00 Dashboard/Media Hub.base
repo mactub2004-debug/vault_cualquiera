@@ -1,0 +1,20 @@
+views:
+  - type: cards
+    name: Books
+    filters:
+      and:
+        - file.folder == "Media/Books"
+    image: note.image
+    imageAspectRatio: 1.4
+    imageFit: contain
+  - type: cards
+    name: Movies
+    filters:
+      and:
+        - file.folder == "Media/Movies"
+    order:
+      - file.name
+      - director
+    image: note.image
+    imageFit: contain
+    imageAspectRatio: 1.45
