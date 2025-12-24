@@ -4,22 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "24320b7ca0c487dc",
+        "id": "0847486cf572b72c",
         "type": "tabs",
         "children": [
           {
-            "id": "11d36678d8aa6692",
+            "id": "35ecd13ee8b90cbf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 Weekly/2025/2025-W52.md",
-                "mode": "preview",
+                "file": "03 Monthly/2025/2025-12-December.md",
+                "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "2025-W52"
+              "title": "2025-12-December"
+            }
+          },
+          {
+            "id": "7a32e3e0cde643e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "06 Templates/Parents/Monthly.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Monthly"
             }
           }
         ]
@@ -214,23 +229,24 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "11d36678d8aa6692",
+  "active": "35ecd13ee8b90cbf",
   "lastOpenFiles": [
-    "00 Dashboard/Welcome.md",
-    "02 Weekly/2025/2025-W52.md",
-    "03 Monthly/2025/2025-12-December.md",
-    "02 Weekly/2025/2025-W51.md",
-    "02 Weekly/2025",
     "06 Templates/Parents/Weekly.md",
-    "06 Templates/Parents/Daily.md",
-    "05 Yearly/2025.md",
-    "04 Quarterly/2025/2025-Q4.md",
     "06 Templates/Parents/Monthly.md",
-    "04 Quarterly/2025",
+    "03 Monthly/2025/2025-12-December.md",
+    "02 Weekly/2025/2025-W52.md",
+    "02 Weekly/2025/2025-W51.md",
     "02 Weekly/2025/2025-W50.md",
     "02 Weekly/2025/2025-W49.md",
     "02 Weekly/2026/2026-W01.md",
     "02 Weekly/2026",
+    "01 Daily/2025/12-December/2025-12-01-Monday.md",
+    "00 Dashboard/Welcome.md",
+    "02 Weekly/2025",
+    "06 Templates/Parents/Daily.md",
+    "05 Yearly/2025.md",
+    "04 Quarterly/2025/2025-Q4.md",
+    "04 Quarterly/2025",
     "01 Daily/2025/12-December/2025-12-20-Saturday.md",
     "01 Daily/2025/12-December/2025-12-31-Wednesday.md",
     "01 Daily/2026/01-January/2026-01-17-Saturday.md",
@@ -245,7 +261,6 @@
     "01 Daily/2025/12-December/2025-12-10-Wednesday.md",
     "01 Daily/2025/12-December/2025-12-09-Tuesday.md",
     "01 Daily/2025/12-December/2025-12-11-Thursday.md",
-    "01 Daily/2025/12-December/2025-12-12-Friday.md",
     "01 Daily/2025/12-December",
     "01 Daily/2025",
     "06 Templates/Images/Daily Notes/SaturdayBanner.gif",

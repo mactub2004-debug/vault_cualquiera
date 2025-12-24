@@ -92,12 +92,3 @@ tR += await tp.file.include("[[Monthly MetaBind WheelOfLifeChartTypePicker]]");
 // Display all 4 wheels of life and the average
 tR += await tp.file.include("[[Monthly WheelOfLifeCategoryChart]]");
 %>
-
-## Q&A
----
-<%*
-// wheel of Life chart
- tR += await tp.file.include("[[Monthly MetaBindAiQA]]")
-%>
-
-<%* app.workspace.activeLeaf.view.editor?.focus(); %>

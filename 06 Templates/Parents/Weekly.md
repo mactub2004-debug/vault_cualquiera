@@ -100,13 +100,3 @@ tR += await tp.file.include("[[Weekly Highlights]]");
 // wheel of Life displays
 tR += await tp.file.include("[[weekly MetaBindWheelOfLifeDisplay]]")
 %>
-
----
-## Q&A
----
-<%*
-// wheel of Life chart
- tR += await tp.file.include("[[Weekly MetaBindAiQA]]")
-%>
-
-<%* app.workspace.activeLeaf.view.editor?.focus(); %>
