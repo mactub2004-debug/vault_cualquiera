@@ -22,7 +22,8 @@ if (page.file.path.includes("02 Weekly")) {
             const val = w.wheelOfLife?.[key];
             if (typeof val === 'number') { sum += val; count++; }
         });
-        return count > 0 ? (sum / count).toFixed(1) : 0;
+        // CAMBIO AQUÍ: Agregado parseFloat() para asegurar que sea un número, no texto
+        return count > 0 ? parseFloat((sum / count).toFixed(1)) : 0;
     });
 }
 
