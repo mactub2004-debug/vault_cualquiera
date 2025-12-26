@@ -95,14 +95,13 @@ SORT file.day ASC
 ---
 ```dataviewjs
 dv.view("06 Templates/Scripts/templater/dataviewjs/yearly/yearlyWheelOfLifeChart", {container: this.container})
-```
+``` 
 
 <%*
-// Display chart type picker for wheel of life category progression
-tR += `**Chart Type:** \`INPUT[suggester(title('chart type'), option(line), option(bar), option(pie), option(radar)):yearlyWheelOfLifeCategoryChartType]\``;
+tR += await tp.file.include("[[Yearly MetaBind WheelOfLifeChartTypePicker]]");
 %>
 
-```dataviewjs
+```dataviewjs  
 const chartType = dv.current().wolChartType || 'line';
 
 dv.view("06 Templates/Scripts/templater/dataviewjs/yearly/yearlyWheelOfLifeProgression", {
