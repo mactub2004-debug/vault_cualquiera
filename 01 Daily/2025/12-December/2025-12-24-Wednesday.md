@@ -17,7 +17,7 @@ cssclasses:
   - daily
 date: 2025-12-24
 alias:
-dayRating: 9
+dayRating: 1
 tags: "#type/daily-note"
 journal: daily
 journal-date: 2025-12-24

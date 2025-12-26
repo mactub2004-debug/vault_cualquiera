@@ -15,7 +15,7 @@ cssclasses:
   - timegarden-daily
   - wednesday
   - daily
-date: 2025-12-03
+date: 2025-12-10
 alias:
 dayRating: 1
 tags: "#type/daily-note"
@@ -24,8 +24,8 @@ journal-date: 2025-12-03
 journal-start-date: 2025-12-03
 journal-end-date: 2025-12-03
 ---
-# ✧ Wednesday, December 03, 2025
-[[2025-W49|]]
+# ✧ Wednesday, December 10, 2025
+[[2025-W50|]]
 `BUTTON[prev-day, current-week, next-day]`
 ```meta-bind-button
 id: prev-day
@@ -35,7 +35,7 @@ label: ← Yesterday
 hidden: true
 actions:
   - type: open
-    link: "[[/01 Daily/2025/12-December/2025-12-02-Tuesday]]"
+    link: "[[/01 Daily/2025/12-December/2025-12-09-Tuesday]]"
     newTab: false
 ```
 ```meta-bind-button
@@ -46,7 +46,7 @@ label: This Week
 hidden: true
 actions:
   - type: open
-    link: "[[/02 Weekly/2025/2025-W49]]"
+    link: "[[/02 Weekly/2025/2025-W50]]"
     newTab: false
 ```
 ```meta-bind-button
@@ -57,7 +57,7 @@ label: Tomorrow →
 hidden: true
 actions:
   - type: open
-    link: "[[/01 Daily/2025/12-December/2025-12-04-Thursday]]"
+    link: "[[/01 Daily/2025/12-December/2025-12-11-Thursday]]"
     newTab: false
 ```
 
@@ -65,7 +65,7 @@ actions:
 INPUT[text(placeholder('Name your Day!'), class('custom-input')):alias]
 ```
 ---
-- <% tp.file.cursor(0) %>
+- 
 
 ---
 ```meta-bind

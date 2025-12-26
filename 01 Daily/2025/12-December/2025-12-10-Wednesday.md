@@ -17,7 +17,7 @@ cssclasses:
   - daily
 date: 2025-12-10
 alias:
-dayRating: 5
+dayRating: 1
 tags: "#type/daily-note"
 journal: daily
 journal-date: 2025-12-10
@@ -65,7 +65,7 @@ actions:
 INPUT[text(placeholder('Name your Day!'), class('custom-input')):alias]
 ```
 ---
-- <% tp.file.cursor(0) %>
+- 
 
 ---
 ```meta-bind
