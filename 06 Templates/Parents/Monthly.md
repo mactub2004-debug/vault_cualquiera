@@ -42,9 +42,6 @@ tR += await tp.file.include("[[Monthly MetaBindAlias]]");
 <%* tR += await tp.file.include("[[Monthly MetaBindSummary]]"); 
 %>
 
-<%*
-tR += await tp.file.include("[[Monthly MetaBindAiButton]]");
-%>
 
 ## Ratings ✮⋆˙
 ---

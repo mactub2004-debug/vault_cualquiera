@@ -42,10 +42,6 @@ tR += await tp.file.include("[[Yearly MetaBindAlias]]");
 tR += await tp.file.include("[[Yearly MetaBindSummary]]"); 
 %>
 
-<%*
-tR += await tp.file.include("[[Yearly MetaBindAiButton]]");
-%>
-
 ## Ratings ✮⋆˙
 ---
 <%*
@@ -107,13 +103,10 @@ tR += `**Chart Type:** \`INPUT[suggester(title('chart type'), option(line), opti
 %>
 
 ```dataviewjs
-dv.view("06 Templates/Scripts/templater/dataviewjs/yearly/yearlyWheelOfLifeProgression", {container: this.container})
-```
-## Q&A
----
-<%*
-// wheel of Life chart
- tR += await tp.file.include("[[Yearly MetaBindAiQA]]")
-%>
+const chartType = dv.current().wolChartType || 'line';
 
-<%* app.workspace.activeLeaf.view.editor?.focus(); %>
+dv.view("06 Templates/Scripts/templater/dataviewjs/yearly/yearlyWheelOfLifeProgression", {
+    container: this.container,
+    chartType: chartType
+})
+```

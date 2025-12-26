@@ -43,9 +43,6 @@ tR += await tp.file.include("[[Quarterly MetaBindAlias]]");
 <%* tR += await tp.file.include("[[Quarterly MetaBindSummary]]"); 
 %>
 
-<%*
-tR += await tp.file.include("[[Quarterly MetaBindAiButton]]");
-%>
 
 ## Ratings ✮⋆˙
 ---
@@ -94,12 +91,3 @@ tR += await tp.file.include("[[Quarterly MetaBind WheelOfLifeChartTypePicker]]")
 // Display wheel of life category progression chart
 tR += await tp.file.include("[[Quarterly WheelOfLifeCategoryChart]]");
 %>
-
-## Q&A
----
-<%*
-// wheel of Life chart
- tR += await tp.file.include("[[Quarterly MetaBindAiQA]]")
-%>
-
-<%* app.workspace.activeLeaf.view.editor?.focus(); %>
