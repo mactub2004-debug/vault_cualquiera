@@ -1,31 +1,62 @@
 const wolService = require(app.vault.adapter.basePath + "/06 Templates/Scripts/services/wheelOfLife.js");
 const container = input.container;
-const style = getComputedStyle(document.body);
-const page = dv.current();
 
+// --- CONFIGURACIÓN VISUAL ---
+container.style.height = '400px'; 
+container.style.width = '100%';
+container.style.position = 'relative';
+const style = getComputedStyle(document.body);
+const gridColor = style.getPropertyValue('--background-modifier-border') || 'rgba(150, 150, 150, 0.3)';
+
+const page = dv.current();
 let dataValues = [];
 const keys = wolService.getKeys();
 
-if (page.file.path.includes("02 Weekly")) {
-    dataValues = keys.map(k => page.wheelOfLife?.[k] || 0);
+// --- LÓGICA DE FECHAS (Detectar Año) ---
+let year = null;
+if (page.date) {
+    year = moment(page.date.toString()).year();
 } else {
-    let filterUnit = 'month';
-    if (page.file.path.includes("Quarterly")) filterUnit = 'quarter';
-    if (page.file.path.includes("Yearly")) filterUnit = 'year';
+    const match = page.file.name.match(/^(\d{4})/);
+    if (match) year = parseInt(match[1]);
+}
 
-    const weeks = dv.pages(`"${window.timeGarden.rootPath}02 Weekly"`)
-        .where(p => p.date && moment(p.date.toString()).isSame(moment(page.date.toString()), filterUnit));
+if (year) {
+    // Buscar TODAS las semanas del año
+    const weeks = dv.pages('"02 Weekly"')
+        .where(p => {
+            // Lógica robusta para detectar fecha de la semana
+            let wDate = p.date ? moment(p.date.toString()) : null;
+            if (!wDate) {
+                const wMatch = p.file.name.match(/^(\d{4})-W(\d{1,2})$/i);
+                if (wMatch) wDate = moment(`${wMatch[1]}-W${wMatch[2].padStart(2, '0')}`, "YYYY-WW");
+            }
+            // Comparamos el año ISO
+            return wDate && wDate.isValid() && wDate.isoWeekYear() === year;
+        });
     
+    if (weeks.length === 0) {
+        container.innerHTML = `<div style="text-align:center; padding-top: 50px; color: var(--text-muted);">
+            ⚠️ Aún no hay semanas registradas para el año ${year}.
+        </div>`;
+        return;
+    }
+
     dataValues = keys.map(key => {
         let sum = 0, count = 0;
         weeks.forEach(w => {
             const val = w.wheelOfLife?.[key];
             if (typeof val === 'number') { sum += val; count++; }
         });
-        return count > 0 ? (sum / count).toFixed(1) : 0;
+        return count > 0 ? parseFloat((sum / count).toFixed(1)) : 0;
     });
+
+} else {
+    container.innerHTML = "No se pudo identificar el año.";
+    return;
 }
 
+// --- RENDERIZADO DEL GRÁFICO ---
 const chartData = {
     type: 'polarArea',
     data: {
@@ -43,12 +74,14 @@ const chartData = {
         scales: {
             r: {
                 min: 0, max: 10,
-                ticks: { display: false },
-                grid: { display: true, color: style.getPropertyValue('--background-modifier-border') }
+                ticks: { display: false, backdropColor: 'transparent', z: 1 },
+                grid: { display: true, color: gridColor, circular: true },
+                angleLines: { display: true, color: gridColor },
+                pointLabels: { display: false }
             }
         },
         plugins: {
-            legend: { position: 'bottom', labels: { color: style.getPropertyValue('--text-muted') } }
+            legend: { position: 'bottom', labels: { color: style.getPropertyValue('--text-muted'), padding: 20, usePointStyle: true } }
         }
     }
 };

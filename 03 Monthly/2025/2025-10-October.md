@@ -5,11 +5,11 @@ cssclasses:
   - image-borders
   - image-small
   - timegarden-monthly
-  - december
+  - october
   - monthly
 banner:
-  - - MonthlyBanner1.gif
-banner-y: 10
+  - - MonthlyBanner3.gif
+banner-y: 30
 banner-x: 30
 content-start: 200
 banner-display: cover
@@ -17,15 +17,15 @@ banner-repeat: true
 banner-height: 400
 banner-fade: -75
 banner-radius: 25
-date: 2025-12-01
+date: 2025-10-01
 alias:
 aiAnswer: ""
 MonthSummary: ""
 monthlyWheelOfLifeCategoryChartType: line
 journal: monthly
-journal-date: 2025-12-01
-journal-start-date: 2025-12-01
-journal-end-date: 2025-12-31
+journal-date: 2025-10-01
+journal-start-date: 2025-10-01
+journal-end-date: 2025-10-31
 wheelOfLife:
   career:
   careerSummary: ""
@@ -38,7 +38,7 @@ wheelOfLife:
   social:
   socialSummary: ""
 ---
-# ✧ *12-December*
+# ✧ *10-October*
 
 `BUTTON[prev-month, current-quarter, next-month]`
 ```meta-bind-button
@@ -49,7 +49,7 @@ label: ← Previous Month
 hidden: true
 actions:
   - type: open
-    link: "[[/03 Monthly/2025/2025-11-November]]"
+    link: "[[/03 Monthly/2025/2025-09-September]]"
     newTab: false
 ```
 ```meta-bind-button
@@ -71,7 +71,7 @@ label: Next Month →
 hidden: true
 actions:
     - type: open
-      link: "[[/03 Monthly/2026/2026-01-January]]"
+      link: "[[/03 Monthly/2025/2025-11-November]]"
       newTab: false
 ```
 
@@ -110,8 +110,8 @@ searchType: frontmatter
 searchTarget: dayRating
 dateFormat: YYYY-MM-DD-dddd
 datasetName: dayRating
-startDate: 2025-12-01-Monday
-endDate: 2025-12-31-Wednesday
+startDate: 2025-10-01-Wednesday
+endDate: 2025-10-31-Friday
 summary:
     template: "Average Rating: {{average()}}" 
 ```
@@ -121,26 +121,29 @@ dv.view("06 Templates/Scripts/templater/dataviewjs/monthly/monthlyRatingChart", 
 ```
 
 ### <p hidden>PicturesHeader</p>
-> [! pictures]- Gallery of M12
-> ![[2025-W01#<p hidden>PicturesHeader</p>]]
-> ![[2025-W49#<p hidden>PicturesHeader</p>]]
-> ![[2025-W50#<p hidden>PicturesHeader</p>]]
-> ![[2025-W51#<p hidden>PicturesHeader</p>]]
-> ![[2025-W52#<p hidden>PicturesHeader</p>]]
+> [! pictures]- Gallery of M10
+> ![[2025-W40#<p hidden>PicturesHeader</p>]]
+> ![[2025-W41#<p hidden>PicturesHeader</p>]]
+> ![[2025-W42#<p hidden>PicturesHeader</p>]]
+> ![[2025-W43#<p hidden>PicturesHeader</p>]]
+> ![[2025-W44#<p hidden>PicturesHeader</p>]]
 
 ## Logs
 ---
-> [!logsone]- Logs of W49
-> ![[2025-W49#Logs]]
+> [!logsone]- Logs of W40
+> ![[2025-W40#Logs]]
 
-> [!logstwo]- Logs of W50
-> ![[2025-W50#Logs]]
+> [!logstwo]- Logs of W41
+> ![[2025-W41#Logs]]
 
-> [!logsthree]- Logs of W51
-> ![[2025-W51#Logs]]
+> [!logsthree]- Logs of W42
+> ![[2025-W42#Logs]]
 
-> [!logsfour]- Logs of W52
-> ![[2025-W52#Logs]]
+> [!logsfour]- Logs of W43
+> ![[2025-W43#Logs]]
+
+> [!logsfive]- Logs of W44
+> ![[2025-W44#Logs]]
 
 
 

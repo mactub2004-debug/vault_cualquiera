@@ -5,11 +5,11 @@ cssclasses:
   - image-borders
   - image-small
   - timegarden-monthly
-  - december
+  - september
   - monthly
 banner:
-  - - MonthlyBanner1.gif
-banner-y: 10
+  - - MonthlyBanner2.gif
+banner-y: 50
 banner-x: 30
 content-start: 200
 banner-display: cover
@@ -17,15 +17,15 @@ banner-repeat: true
 banner-height: 400
 banner-fade: -75
 banner-radius: 25
-date: 2025-12-01
+date: 2025-09-01
 alias:
 aiAnswer: ""
 MonthSummary: ""
 monthlyWheelOfLifeCategoryChartType: line
 journal: monthly
-journal-date: 2025-12-01
-journal-start-date: 2025-12-01
-journal-end-date: 2025-12-31
+journal-date: 2025-09-01
+journal-start-date: 2025-09-01
+journal-end-date: 2025-09-30
 wheelOfLife:
   career:
   careerSummary: ""
@@ -38,7 +38,7 @@ wheelOfLife:
   social:
   socialSummary: ""
 ---
-# ✧ *12-December*
+# ✧ *09-September*
 
 `BUTTON[prev-month, current-quarter, next-month]`
 ```meta-bind-button
@@ -49,7 +49,7 @@ label: ← Previous Month
 hidden: true
 actions:
   - type: open
-    link: "[[/03 Monthly/2025/2025-11-November]]"
+    link: "[[/03 Monthly/2025/2025-08-August]]"
     newTab: false
 ```
 ```meta-bind-button
@@ -60,7 +60,7 @@ label: This Quarter
 hidden: true
 actions:
     - type: open  
-      link: "[[/04 Quarterly/2025/2025-Q4]]"
+      link: "[[/04 Quarterly/2025/2025-Q3]]"
       newTab: false
 ```
 ```meta-bind-button
@@ -71,7 +71,7 @@ label: Next Month →
 hidden: true
 actions:
     - type: open
-      link: "[[/03 Monthly/2026/2026-01-January]]"
+      link: "[[/03 Monthly/2025/2025-10-October]]"
       newTab: false
 ```
 
@@ -83,25 +83,6 @@ INPUT[text(placeholder('Name this Month!'), class('custom-input')):alias]
 INPUT[editor(class(custom-editor)):MonthSummary]
 ```
 
-`BUTTON[generate-monthly-summary, generate-monthly-alias]`
-```meta-bind-button
-id: generate-monthly-summary
-style: primary
-label: ✨ Generate Summary
-hidden: true
-actions:
-  - type: command
-    command: templater-obsidian:06 Templates/Components/Monthly AI Summarize.md
-```
-```meta-bind-button
-id: generate-monthly-alias
-style: primary
-label: 🏷️ Generate Alias
-hidden: true
-actions:
-  - type: command
-    command: templater-obsidian:06 Templates/Components/Monthly AI Alias.md
-```
 
 ## Ratings ✮⋆˙
 ---
@@ -110,8 +91,8 @@ searchType: frontmatter
 searchTarget: dayRating
 dateFormat: YYYY-MM-DD-dddd
 datasetName: dayRating
-startDate: 2025-12-01-Monday
-endDate: 2025-12-31-Wednesday
+startDate: 2025-09-01-Monday
+endDate: 2025-09-30-Tuesday
 summary:
     template: "Average Rating: {{average()}}" 
 ```
@@ -121,26 +102,26 @@ dv.view("06 Templates/Scripts/templater/dataviewjs/monthly/monthlyRatingChart", 
 ```
 
 ### <p hidden>PicturesHeader</p>
-> [! pictures]- Gallery of M12
-> ![[2025-W01#<p hidden>PicturesHeader</p>]]
-> ![[2025-W49#<p hidden>PicturesHeader</p>]]
-> ![[2025-W50#<p hidden>PicturesHeader</p>]]
-> ![[2025-W51#<p hidden>PicturesHeader</p>]]
-> ![[2025-W52#<p hidden>PicturesHeader</p>]]
+> [! pictures]- Gallery of M09
+> ![[2025-W36#<p hidden>PicturesHeader</p>]]
+> ![[2025-W37#<p hidden>PicturesHeader</p>]]
+> ![[2025-W38#<p hidden>PicturesHeader</p>]]
+> ![[2025-W39#<p hidden>PicturesHeader</p>]]
+> ![[2025-W40#<p hidden>PicturesHeader</p>]]
 
 ## Logs
 ---
-> [!logsone]- Logs of W49
-> ![[2025-W49#Logs]]
+> [!logsone]- Logs of W36
+> ![[2025-W36#Logs]]
 
-> [!logstwo]- Logs of W50
-> ![[2025-W50#Logs]]
+> [!logstwo]- Logs of W37
+> ![[2025-W37#Logs]]
 
-> [!logsthree]- Logs of W51
-> ![[2025-W51#Logs]]
+> [!logsthree]- Logs of W38
+> ![[2025-W38#Logs]]
 
-> [!logsfour]- Logs of W52
-> ![[2025-W52#Logs]]
+> [!logsfour]- Logs of W39
+> ![[2025-W39#Logs]]
 
 
 

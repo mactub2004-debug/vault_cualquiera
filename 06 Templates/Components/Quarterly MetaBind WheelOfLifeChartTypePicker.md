@@ -1,1 +1,1 @@
-**Chart Type:** `INPUT[suggester(title('chart type'), option(line), option(bar), option(pie), option(radar)):quarterlyWheelOfLifeCategoryChartType]`
+**Chart Type:** `INPUT[inlineSelect(option(line, 📈 Line), option(bar, 📊 Bar)):wolChartType]`

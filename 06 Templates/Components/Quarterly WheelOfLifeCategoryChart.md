@@ -1,3 +1,8 @@
 ```dataviewjs
-dv.view("<%* tR += window?.timeGarden?.rootPath.substring(1); _%>06 Templates/Scripts/templater/dataviewjs/quarterly/quarterlyWheelOfLifeProgression", {container: this.container})
+const chartType = dv.current().wolChartType;
+
+dv.view("06 Templates/Scripts/templater/dataviewjs/quarterly/quarterlyWheelOfLifeProgression", {
+    container: this.container,
+    chartType: chartType
+})
 ```
